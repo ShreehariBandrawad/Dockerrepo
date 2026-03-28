@@ -35,7 +35,7 @@ pipeline{
                             script{
                                 sh '''
                                 docker rm -f c3 || true
-                                docker run -d --name c3 -p 808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080808080:80 httpd
+                                docker run -d --name c3 -p 80:80 httpd
                                 docker exec c3 rm -rf /usr/local/apache2/htdocs/*
                                 docker cp . c3:/usr/local/apache2/htdocs/
                                 '''
